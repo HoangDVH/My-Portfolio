@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Đấu Vũ Hoàng — Full Stack Java Developer. Spring Boot, React, TypeScript, PostgreSQL."
+    />
+    <meta name="author" content="Đấu Vũ Hoàng" />
+    <script>
+      (function () {
+        try {
+          var theme = localStorage.getItem('portfolio-theme-v2')
+          if (theme !== 'light' && theme !== 'dark') theme = 'dark'
+          document.documentElement.setAttribute('data-theme', theme)
+          var lang = localStorage.getItem('portfolio-lang-v2')
+          document.documentElement.lang =
+            lang === 'vi' || lang === 'en' ? lang : 'en'
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'dark')
+          document.documentElement.lang = 'en'
+        }
+      })()
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Đấu Vũ Hoàng — Full Stack Java Developer</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
