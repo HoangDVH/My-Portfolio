@@ -1,6 +1,7 @@
 import { useEffect, type CSSProperties } from 'react'
 import { useApp } from '../context/AppContext'
 import { projects, t, ui } from '../data/content'
+import { ProjectGallery } from './ProjectGallery'
 
 type CaseStudyProps = {
   id: string
@@ -67,7 +68,11 @@ export function CaseStudy({ id }: CaseStudyProps) {
           className="case__hero"
           style={{ '--project-accent': project.accent } as CSSProperties}
         >
-          <img src={project.image} alt={t(project.name, lang)} />
+          <ProjectGallery
+            images={project.images}
+            alt={t(project.name, lang)}
+            accent={project.accent}
+          />
         </div>
 
         <header className="case__header">

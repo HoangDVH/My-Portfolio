@@ -1,6 +1,11 @@
 import type { Lang } from '../context/AppContext'
 import easymartImg from '../assets/projects/easymart.png'
+import easymart1 from '../assets/projects/easymart-1.png'
+import easymart2 from '../assets/projects/easymart-2.png'
+import easymart3 from '../assets/projects/easymart-3.png'
 import managementImg from '../assets/projects/management.png'
+import management1 from '../assets/projects/management-1.png'
+import management2 from '../assets/projects/management-2.png'
 import netflixImg from '../assets/projects/netflix.png'
 
 export const profileMeta = {
@@ -38,42 +43,16 @@ export const ui = {
       vi: 'Full Stack Java Developer',
     },
     headline: {
-      en: 'Secure, scalable web apps — from Spring Boot APIs to React UI.',
-      vi: 'Ứng dụng web bảo mật, mở rộng được — từ API Spring Boot đến UI React.',
+      en: 'Backend-strong fullstack — Spring Boot APIs, React UI, production habits.',
+      vi: 'Fullstack lệch backend — API Spring Boot, UI React, tư duy production.',
     },
     lead: {
-      en: 'Fullstack with strong backend focus: JWT/RBAC, Redis, PostgreSQL, and TypeScript. Ready to join a team and deliver production-quality software.',
-      vi: 'Fullstack lệch backend: JWT/RBAC, Redis, PostgreSQL và TypeScript. Sẵn sàng join team và deliver phần mềm chất lượng production.',
+      en: 'Junior Full Stack (Java) ready to contribute — secure APIs, clear UI, and demos you can click today.',
+      vi: 'Junior Full Stack (Java) sẵn sàng đóng góp — API bảo mật, UI rõ ràng, và demo bấm xem được ngay.',
     },
     ctaWork: { en: 'See my work', vi: 'Xem dự án' },
     ctaMail: { en: 'Email me', vi: 'Gửi email' },
     scroll: { en: 'Scroll', vi: 'Cuộn' },
-  },
-  proof: {
-    eyebrow: { en: 'Why hire me', vi: 'Vì sao nên tuyển' },
-    items: [
-      {
-        label: { en: 'Impact', vi: 'Tác động' },
-        value: {
-          en: 'Redis cut DB load ~60–70% on EasyMart',
-          vi: 'Redis giảm ~60–70% tải DB trên EasyMart',
-        },
-      },
-      {
-        label: { en: 'Proof', vi: 'Bằng chứng' },
-        value: {
-          en: 'Live demos + GitHub for main projects',
-          vi: 'Có demo sống + GitHub cho dự án chính',
-        },
-      },
-      {
-        label: { en: 'Fit', vi: 'Phù hợp' },
-        value: {
-          en: 'Java/Spring + React/TS · UIT · JLPT N3',
-          vi: 'Java/Spring + React/TS · UIT · JLPT N3',
-        },
-      },
-    ],
   },
   work: {
     eyebrow: { en: 'Selected work', vi: 'Dự án nổi bật' },
@@ -106,8 +85,8 @@ export const ui = {
       vi: 'Java · Spring · React — stack dùng hàng ngày',
     },
     desc: {
-      en: 'Six core strengths up front. Supporting tools listed cleanly below.',
-      vi: 'Sáu thế mạnh chính lên trước. Tool hỗ trợ liệt kê gọn bên dưới.',
+      en: 'Core stack first — then tools grouped so you can scan in seconds.',
+      vi: 'Core lên trước — tool còn lại nhóm rõ để nhìn phát hiểu liền.',
     },
     core: { en: 'Core', vi: 'Core' },
     languages: { en: 'Spoken languages', vi: 'Ngôn ngữ' },
@@ -277,6 +256,7 @@ export type Project = {
   id: ProjectId
   accent: string
   image: string
+  images: string[]
   featured: boolean
   stack: string[]
   live: string | null
@@ -301,6 +281,7 @@ export const projects: Project[] = [
     id: 'easymart',
     accent: '#1a6b5c',
     image: easymartImg,
+    images: [easymart1, easymart2, easymart3],
     featured: true,
     stack: [
       'Java',
@@ -377,6 +358,7 @@ export const projects: Project[] = [
     id: 'management',
     accent: '#2c4a6e',
     image: managementImg,
+    images: [management1, management2, managementImg],
     featured: true,
     stack: ['React', 'TypeScript', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS'],
     live: 'https://management-frontend-alpha-two.vercel.app/',
@@ -443,6 +425,7 @@ export const projects: Project[] = [
     id: 'netflix',
     accent: '#8b3a3a',
     image: netflixImg,
+    images: [netflixImg],
     featured: false,
     stack: ['React', 'TypeScript', 'Redux Toolkit', 'Tailwind CSS'],
     live: null,
@@ -559,16 +542,16 @@ export const experiences = [
     stack: ['React', 'TypeScript', 'Tailwind CSS', 'Redux Toolkit'],
     highlights: [
       {
-        en: 'Shipped responsive UI features in a 3-person Agile-like team.',
-        vi: 'Ship tính năng UI responsive trong nhóm 3 người theo quy trình gần Agile.',
+        en: 'Built responsive React/TypeScript screens for a streaming-style product in a 3-person team.',
+        vi: 'Xây các màn React/TypeScript responsive cho sản phẩm kiểu streaming trong nhóm 3 người.',
       },
       {
-        en: 'Owned auth/RBAC screens and REST-driven CRUD flows on a streaming-inspired product.',
-        vi: 'Phụ trách màn auth/RBAC và luồng CRUD qua REST trên sản phẩm phong cách streaming.',
+        en: 'Delivered auth, RBAC, and REST CRUD flows end-to-end — from UI states to API integration.',
+        vi: 'Làm trọn luồng auth, RBAC và CRUD REST — từ trạng thái UI đến tích hợp API.',
       },
       {
-        en: 'Improved perceived performance with lazy loading and clearer Redux Toolkit state.',
-        vi: 'Cải thiện cảm nhận tốc độ bằng lazy loading và state Redux Toolkit rõ hơn.',
+        en: 'Cut initial load friction with route-level lazy loading and cleaner Redux Toolkit state.',
+        vi: 'Giảm tải trang đầu bằng lazy loading theo route và state Redux Toolkit gọn hơn.',
       },
     ],
     link: 'https://github.com/HoangDVH/netflix-clone',

@@ -6,7 +6,6 @@ import { Experience } from './components/Experience'
 import { Hero } from './components/Hero'
 import { Nav } from './components/Nav'
 import { Projects } from './components/Projects'
-import { ProofStrip } from './components/ProofStrip'
 import { ScrollProgress } from './components/ScrollProgress'
 import { Skills } from './components/Skills'
 
@@ -19,7 +18,6 @@ function Portfolio() {
       <Nav />
       <main>
         <Hero />
-        <ProofStrip />
         <Projects />
         <Experience />
         <Skills />

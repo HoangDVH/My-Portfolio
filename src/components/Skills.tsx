@@ -43,31 +43,44 @@ export function Skills() {
         </Reveal>
 
         <Reveal className="skills-support" delay={80}>
-          <dl className="skills-support__list">
+          <div className="skills-support__list">
             {skillGroupLabels.map((label, index) => {
               const items = supportingItems(skillItems[index])
               if (items.length === 0) return null
               return (
                 <div key={label.en} className="skills-support__row">
-                  <dt>{t(label, lang)}</dt>
-                  <dd>{items.join(' · ')}</dd>
+                  <p className="skills-support__label">{t(label, lang)}</p>
+                  <ul className="skills-chips">
+                    {items.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
                 </div>
               )
             })}
-          </dl>
+          </div>
         </Reveal>
 
         <Reveal className="skills-meta" delay={100}>
-          <p>
-            <span>{t(ui.skills.languages, lang)}</span>
-            {spokenLanguages
-              .map((item) => `${t(item.name, lang)} (${t(item.level, lang)})`)
-              .join(' · ')}
-          </p>
-          <p>
-            <span>{t(ui.skills.professional, lang)}</span>
-            {softSkills.map((skill) => t(skill, lang)).join(' · ')}
-          </p>
+          <div className="skills-meta__block">
+            <p className="skills-support__label">{t(ui.skills.languages, lang)}</p>
+            <ul className="skills-chips skills-chips--soft">
+              {spokenLanguages.map((item) => (
+                <li key={item.name.en}>
+                  {t(item.name, lang)}
+                  <span>{t(item.level, lang)}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="skills-meta__block">
+            <p className="skills-support__label">{t(ui.skills.professional, lang)}</p>
+            <ul className="skills-chips skills-chips--soft">
+              {softSkills.map((skill) => (
+                <li key={skill.en}>{t(skill, lang)}</li>
+              ))}
+            </ul>
+          </div>
         </Reveal>
       </div>
     </section>

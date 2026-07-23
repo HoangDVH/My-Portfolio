@@ -1,6 +1,7 @@
 import type { CSSProperties } from 'react'
 import { useApp } from '../context/AppContext'
 import { projects, t, ui } from '../data/content'
+import { ProjectGallery } from './ProjectGallery'
 import { Reveal } from './Reveal'
 
 export function Projects() {
@@ -77,19 +78,13 @@ export function Projects() {
                   </div>
                 </div>
 
-                <button
-                  type="button"
-                  className="project__visual"
-                  onClick={() => openCase(project.id)}
-                  aria-label={t(ui.work.caseStudy, lang)}
-                >
-                  <img
-                    src={project.image}
+                <div className="project__visual">
+                  <ProjectGallery
+                    images={project.images}
                     alt={t(project.name, lang)}
-                    className="project__shot"
-                    loading="lazy"
+                    accent={project.accent}
                   />
-                </button>
+                </div>
               </article>
             </Reveal>
           ))}
